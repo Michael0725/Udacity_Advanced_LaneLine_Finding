@@ -23,7 +23,7 @@ class Advanced_finding_lane_line:
 
     def Calibration_Camera(self,img):
 
-        relative_path = ''
+        relative_path = '/CarND-Advanced-Lane-Lines-master/camera_cal'
         self.absolute_path = self.file_abspath(relative_path)
         images = glob.glob(self.absolute_path+'\\'+'calibration*.jpg')
         objpoints = []
@@ -250,9 +250,9 @@ class Advanced_finding_lane_line:
         return combine_pic
 
     def Pics_processing(self):
-        Input_relative_path = '/test_images'
+        Input_relative_path = '/CarND-Advanced-Lane-Lines-master/test_images'
         Input_abs_path = self.file_abspath(Input_relative_path)
-        Output_relative_path = '/output_images'
+        Output_relative_path = '/CarND-Advanced-Lane-Lines-master/output_images'
         Output_abs_path = self.file_abspath(Output_relative_path)
         pics = os.listdir(Input_abs_path)
         for element in pics:
@@ -266,8 +266,8 @@ class Advanced_finding_lane_line:
 
 Pic_processing = Advanced_finding_lane_line()
 Pic_processing.Pics_processing()
-Video_Output_path = '/Output_Video'
-Video_Input_path = ''
+Video_Output_path = '/CarND-Advanced-Lane-Lines-master/Output_Video'
+Video_Input_path = '/CarND-Advanced-Lane-Lines-master'
 white_output =Pic_processing.file_abspath(Video_Output_path)+'\\'+'Output1.mp4'
 Video_input = Pic_processing.file_abspath(Video_Input_path)+'\\'+'project_video.mp4'
 clip1 = VideoFileClip(Video_input)
