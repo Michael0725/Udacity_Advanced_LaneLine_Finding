@@ -20,29 +20,76 @@ The code is as follow whose input is the original picture and it's out put is th
 Also, in order to test whether the method is working normally, I used the calibration1.jpg to test the method and the output is as follow
 
 ```
-    def Calibration_Camera(self,img):
+import numpy as np
+import cv2
+import matplotlib.pyplot as plt
+import glob
+import os
+import sys
 
+
+class Advanced_finding_lane_line:
+
+    def __init__(self):
+        self.Output_path = ''
+        pass
+
+    def file_abspath(self, path):
+        current_path = os.path.dirname(sys.argv[0])
+        file_abspath = current_path + path
+        file_abspath = file_abspath.replace('/', '\\')
+        return file_abspath
+
+
+    def Calibration_Camera(self, img):
         relative_path = '/camera_cal'
         self.absolute_path = self.file_abspath(relative_path)
-        images = glob.glob(self.absolute_path+'\\'+'calibration*.jpg')
+        images = glob.glob(self.absolute_path + '\\' + 'calibration*.jpg')
         objpoints = []
         imgpoints = []
-        objp = np.zeros((6*9,3),np.float32)
-        objp[:,:2] = np.mgrid[0:9,0:6].T.reshape(-1,2)
+        objp = np.zeros((6 * 9, 3), np.float32)
+        objp[:, :2] = np.mgrid[0:9, 0:6].T.reshape(-1, 2)
         for element in images:
             picture = cv2.imread(element)
-            gray1 = cv2.cvtColor(picture,cv2.COLOR_BGR2GRAY)
-            ret,corners = cv2.findChessboardCorners(gray1,(9,6))
-            if ret ==True:
+            gray1 = cv2.cvtColor(picture, cv2.COLOR_BGR2GRAY)
+            ret, corners = cv2.findChessboardCorners(gray1, (9, 6))
+            if ret == True:
                 objpoints.append(objp)
                 imgpoints.append(corners)
-        gray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
-        self.ret,self.mtx,self.dst,self.rvecs,self.tvecs = cv2.calibrateCamera(objpoints,imgpoints,gray.shape[::-1],None,None)
-        Undistorted_Chessboard_pic = cv2.undistort(img,self.mtx,self.dst,None,self.mtx)
-        Undistorted_pic_Outputpath = r'D:\01_Udacity_Self_Drivingcar_Program\Advanced_Camera_Calibration\CarND-Advanced-Lane-Lines-master\camera_cal\Undistorted.jpg'
-        cv2.imwrite(Undistorted_pic_Outputpath,Undistorted_Chessboard_pic)
-        print self.dst
-        return self.mtx,self.dst
+        gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+        self.ret, self.mtx, self.dst, self.rvecs, self.tvecs = cv2.calibrateCamera(objpoints, imgpoints, gray.shape[::-1],
+                                                                                   None, None)
+        Undistort = cv2.undistort(img,self.mtx,self.dst,None,self.mtx)
+        f, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 4.5))
+        f.tight_layout()
+        ax1.imshow(img)
+        ax1.set_title('Original Image', fontsize=14)
+        ax2.imshow(Undistort)
+        ax2.set_title('Undistorted Image', fontsize=14)
+        plt.subplots_adjust(left=0.1, right=0.9, top=0.9, bottom=0.1)
+        plt.savefig(self.Output_path)
+        return self.mtx, self.dst
+
+    def Pics_processing(self):
+        Input_relative_path = '/test_images'
+        Input_abs_path = self.file_abspath(Input_relative_path)
+        Output_relative_path = '/Camera_Calibration_Output'
+        Output_abs_path = self.file_abspath(Output_relative_path)
+        pics = os.listdir(Input_abs_path)
+        Mode = 2
+        if Mode == 1:
+            for element in pics:
+                whole_path = Input_abs_path + '\\' + element
+                self.Output_path = Output_abs_path + '\\' + element
+                image = cv2.imread(whole_path)
+        else:
+            image_path = self.file_abspath('/camera_cal/calibration1.jpg')
+            self.Output_path = Output_abs_path+'\\'+'calibration1.jpg'
+            image = cv2.imread(image_path)
+        Pic_processing.Calibration_Camera(image)
+
+Pic_processing = Advanced_finding_lane_line()
+Pic_processing.Pics_processing()
 ```
 ![Undistorted Image](https://raw.githubusercontent.com/Michael0725/Udacity_Advanced_LaneLine_Finding/master/Camera_Calibration_Output/calibration1.jpg)
 
