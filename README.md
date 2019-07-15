@@ -13,7 +13,7 @@ The goal / steps of this project are the following:
 * Warp the detected lane boundaries back onto the original image.
 * Output visual display of the lane boundaries and numerical estimation of lane curvature and vehicle position.
 
-####Camera Calibration 
+###Camera Calibration 
 
 Here, I use the the method offered by open cv to calculate the camera calibration matrix and the distortion coefficients.At first, I need to go through 20 chessboard pics to find the coordinate of each corner and add it to the "img points".Then, I need also add the object points cordinate to "objpoints".Secondly, I just need to put the "imgpoints" and the "objpoints" to the cv.calibrateCamera()，then I could get the camera calibration matrix "mtx" and the distortion coefficients "dst".
 The code is as follow whose input is the original picture and it's out put is the calibration matrix and the distortion coefficients.
