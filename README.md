@@ -19,7 +19,7 @@ Here, I use the the method offered by open cv to calculate the camera calibratio
 The code is as follow whose input is the original picture and it's out put is the calibration matrix and the distortion coefficients.
 Also, in order to test whether the method is working normally, I used a distorted chessboard pic to do the test.The input and the output image is also as follow:
 
-'''
+```
     def Calibration_Camera(self,img):
 
         relative_path = '/camera_cal'
@@ -43,7 +43,7 @@ Also, in order to test whether the method is working normally, I used a distorte
         cv2.imwrite(Undistorted_pic_Outputpath,Undistorted_Chessboard_pic)
         print self.dst
         return self.mtx,self.dst
-'''
+```
 ![Undistorted Image]https://github.com/Michael0725/Udacity_Advanced_LaneLine_Finding/blob/master/camera_cal/Undistorted.jpg
 
 A great writeup should include the rubric points as well as your description of how you addressed each point.  You should include a detailed description of the code used in each step (with line-number references and code snippets where necessary), and links to other supporting documents or external references.  You should include images in your writeup to demonstrate how your code works with examples.  
