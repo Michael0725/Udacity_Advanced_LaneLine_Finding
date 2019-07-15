@@ -44,7 +44,7 @@ Also, in order to test whether the method is working normally, I used the calibr
         print self.dst
         return self.mtx,self.dst
 ```
-![Undistorted Image]https://github.com/Michael0725/Udacity_Advanced_LaneLine_Finding/blob/master/camera_cal/Undistorted.jpg
+！[Undistorted Image]https://github.com/Michael0725/Udacity_Advanced_LaneLine_Finding/blob/master/camera_cal/Undistorted.jpg
 
 A great writeup should include the rubric points as well as your description of how you addressed each point.  You should include a detailed description of the code used in each step (with line-number references and code snippets where necessary), and links to other supporting documents or external references.  You should include images in your writeup to demonstrate how your code works with examples.  
 
