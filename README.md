@@ -92,6 +92,9 @@ Pic_processing = Advanced_finding_lane_line()
 Pic_processing.Pics_processing()
 ```
 ![Undistorted Image](https://raw.githubusercontent.com/Michael0725/Udacity_Advanced_LaneLine_Finding/master/Camera_Calibration_Output/calibration1.jpg)
+
+After testint the method of camera calibration, then I could use the images in the test_images folder as the input of the method.
+The comparison picture is as follow:
 ![straight_lines1](https://raw.githubusercontent.com/Michael0725/Udacity_Advanced_LaneLine_Finding/master/Camera_Calibration_Output/straight_lines1.jpg)
 ![straight_lines2](https://raw.githubusercontent.com/Michael0725/Udacity_Advanced_LaneLine_Finding/master/Camera_Calibration_Output/straight_lines2.jpg)
 ![test1](https://raw.githubusercontent.com/Michael0725/Udacity_Advanced_LaneLine_Finding/master/Camera_Calibration_Output/test1.jpg)
@@ -100,7 +103,8 @@ Pic_processing.Pics_processing()
 ![test4](https://raw.githubusercontent.com/Michael0725/Udacity_Advanced_LaneLine_Finding/master/Camera_Calibration_Output/test4.jpg)
 ![test5](https://raw.githubusercontent.com/Michael0725/Udacity_Advanced_LaneLine_Finding/master/Camera_Calibration_Output/test5.jpg)
 ![test6](https://raw.githubusercontent.com/Michael0725/Udacity_Advanced_LaneLine_Finding/master/Camera_Calibration_Output/test6.jpg)
-A great writeup should include the rubric points as well as your description of how you addressed each point.  You should include a detailed description of the code used in each step (with line-number references and code snippets where necessary), and links to other supporting documents or external references.  You should include images in your writeup to demonstrate how your code works with examples.  
+
+### Threshold Method to identify the Lane-line 
 
 All that said, please be concise!  We're not looking for you to write a book here, just a brief description of how you passed each rubric point, and references to the relevant code :). 
 
