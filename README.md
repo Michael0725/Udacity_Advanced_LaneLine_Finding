@@ -135,13 +135,65 @@ left is the Undistorted pic and the rightone is the sobelX binary pic.
 ![test5](https://raw.githubusercontent.com/Michael0725/Udacity_Advanced_LaneLine_Finding/master/Sobel_X_Threshold/test5.jpg)
 ![test6](https://raw.githubusercontent.com/Michael0725/Udacity_Advanced_LaneLine_Finding/master/Sobel_X_Threshold/test6.jpg)
 
+The code of HLS_S Threshold method is as follow:
+```
+   def HSL_S_threshold(self,img,thresholdmin=90,thresholdmax=255):
+        hls = cv2.cvtColor(img,cv2.COLOR_BGR2HLS)
+        H = hls[:,:,0]
+        L = hls[:,:,1]
+        S = hls[:,:,2]
+        HLS_Binary = np.zeros_like(H)
+        HLS_Binary[(S>thresholdmin)&(S<thresholdmax)] = 1
+        return  HLS_Binary
+```
+The comparison image of Undistorted pic and HSL_S_Threshold binary pic is as follow:
+![straight_lines1](https://raw.githubusercontent.com/Michael0725/Udacity_Advanced_LaneLine_Finding/master/HLS_S_Binary/straight_lines1.jpg)
+![straight_lines2](https://raw.githubusercontent.com/Michael0725/Udacity_Advanced_LaneLine_Finding/master/HLS_S_Binary/straight_lines2.jpg)
+![test1](https://raw.githubusercontent.com/Michael0725/Udacity_Advanced_LaneLine_Finding/master/HLS_S_Binary/test1.jpg)
+![test2](https://raw.githubusercontent.com/Michael0725/Udacity_Advanced_LaneLine_Finding/master/HLS_S_Binary/test2.jpg)
+![test3](https://raw.githubusercontent.com/Michael0725/Udacity_Advanced_LaneLine_Finding/master/HLS_S_Binary/test3.jpg)
+![test4](https://raw.githubusercontent.com/Michael0725/Udacity_Advanced_LaneLine_Finding/master/HLS_S_Binary/test4.jpg)
+![test5](https://raw.githubusercontent.com/Michael0725/Udacity_Advanced_LaneLine_Finding/master/HLS_S_Binary/test5.jpg)
+![test6](https://raw.githubusercontent.com/Michael0725/Udacity_Advanced_LaneLine_Finding/master/HLS_S_Binary/test6.jpg)
 
-All that said, please be concise!  We're not looking for you to write a book here, just a brief description of how you passed each rubric point, and references to the relevant code :). 
+The code of HLS_H Threshold method is as follow:
+```
+  def HSL_H_threshold(self, img, thresholdmin=15, thresholdmax=100):
+        hls = cv2.cvtColor(img, cv2.COLOR_BGR2HLS)
+        H = hls[:, :, 0]
+        L = hls[:, :, 1]
+        S = hls[:, :, 2]
+        HLS_Binary = np.zeros_like(H)
+        HLS_Binary[(H > thresholdmin) & (H < thresholdmax)] = 1
+        return HLS_Binary
+  ```
+ The comparison image of Undistorted pic and HSL_H_Threshold binary pic is as follow:
+![straight_lines1](https://raw.githubusercontent.com/Michael0725/Udacity_Advanced_LaneLine_Finding/master/HLS_H_Binary/straight_lines1.jpg)
+![straight_lines2](https://raw.githubusercontent.com/Michael0725/Udacity_Advanced_LaneLine_Finding/master/HLS_H_Binary/straight_lines2.jpg)
+![test1](https://raw.githubusercontent.com/Michael0725/Udacity_Advanced_LaneLine_Finding/master/HLS_H_Binary/test1.jpg)
+![test2](https://raw.githubusercontent.com/Michael0725/Udacity_Advanced_LaneLine_Finding/master/HLS_H_Binary/test2.jpg)
+![test3](https://raw.githubusercontent.com/Michael0725/Udacity_Advanced_LaneLine_Finding/master/HLS_H_Binary/test3.jpg)
+![test4](https://raw.githubusercontent.com/Michael0725/Udacity_Advanced_LaneLine_Finding/master/HLS_H_Binary/test4.jpg)
+![test5](https://raw.githubusercontent.com/Michael0725/Udacity_Advanced_LaneLine_Finding/master/HLS_H_Binary/test5.jpg)
+![test6](https://raw.githubusercontent.com/Michael0725/Udacity_Advanced_LaneLine_Finding/master/HLS_H_Binary/test6.jpg) 
 
-You're not required to use markdown for your writeup.  If you use another method please just submit a pdf of your writeup.
-
-The Project
----
+The combination code of different throshold method is as follow:
+```
+        Sobel_binary = self.abs_sobel_threshold(undistort, 'x', 35, 100)
+        HLS_Binary = self.HSL_S_threshold(undistort, 90, 255)
+        HLS_H_Binary = self.HSL_H_threshold(undistort, 25, 100)
+        Threshold = np.zeros_like(Sobel_binary)
+        Threshold[(Sobel_binary == 1) | (HLS_Binary == 1) | (HLS_H_Binary == 1)] = 1
+```
+The comparison image of Undistorted pic and Combine threshold binary pic is as follow:
+![straight_lines1](https://raw.githubusercontent.com/Michael0725/Udacity_Advanced_LaneLine_Finding/master/Threshold_Combine_Image/straight_lines1.jpg)
+![straight_lines2](https://raw.githubusercontent.com/Michael0725/Udacity_Advanced_LaneLine_Finding/master/Threshold_Combine_Image/straight_lines2.jpg)
+![test1](https://raw.githubusercontent.com/Michael0725/Udacity_Advanced_LaneLine_Finding/master/Threshold_Combine_Image/test1.jpg)
+![test2](https://raw.githubusercontent.com/Michael0725/Udacity_Advanced_LaneLine_Finding/master/Threshold_Combine_Image/test2.jpg)
+![test3](https://raw.githubusercontent.com/Michael0725/Udacity_Advanced_LaneLine_Finding/master/Threshold_Combine_Image/test3.jpg)
+![test4](https://raw.githubusercontent.com/Michael0725/Udacity_Advanced_LaneLine_Finding/master/Threshold_Combine_Image/test4.jpg)
+![test5](https://raw.githubusercontent.com/Michael0725/Udacity_Advanced_LaneLine_Finding/master/Threshold_Combine_Image/test5.jpg)
+![test6](https://raw.githubusercontent.com/Michael0725/Udacity_Advanced_LaneLine_Finding/master/Threshold_Combine_Image/test6.jpg) 
 
 The goals / steps of this project are the following:
 
