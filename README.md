@@ -302,9 +302,12 @@ plt.imshow(out_img)
 plt.show()
 ```
 The related pics is as follow:
+
+
 ![image1](https://raw.githubusercontent.com/Michael0725/Udacity_Advanced_LaneLine_Finding/master/processing_image/Figure_1.png)
 ![image2](https://raw.githubusercontent.com/Michael0725/Udacity_Advanced_LaneLine_Finding/master/processing_image/window_figure.png)
 ![image3](https://raw.githubusercontent.com/Michael0725/Udacity_Advanced_LaneLine_Finding/master/processing_image/fill_the_lane.png)
+
 ### Calculate the radius of the lane and the vehicle position:
 ```
 ym_per_pix = 30. / 720  # meters per pixel in y dimension
@@ -342,28 +345,16 @@ cv2.putText(combine_pic, center_text, (100, 150), font, 1, (255, 255, 255), 2)
 cv2.imwrite(self.Output_path, combine_pic)
 ```
 The related pics is as follow:
+
 ![image1](https://raw.githubusercontent.com/Michael0725/Udacity_Advanced_LaneLine_Finding/master/processing_image/back_perspective.png)
 ![image2](https://raw.githubusercontent.com/Michael0725/Udacity_Advanced_LaneLine_Finding/master/processing_image/write_the_info.png)
 
-### The final output image is as follow:
+### Final output:
+Plese refer the [total code] (https://github.com/Michael0725/Udacity_Advanced_LaneLine_Finding/blob/master/Advanced_Finding_Lane_Line.py)
+Please refer the [output images](https://github.com/Michael0725/Udacity_Advanced_LaneLine_Finding/tree/master/output_images)
+Please refer the [output videos](https://github.com/Michael0725/Udacity_Advanced_LaneLine_Finding/tree/master/Output_Video)
 
-* Compute the camera calibration matrix and distortion coefficients given a set of chessboard images.
-* Apply a distortion correction to raw images.
-* Use color transforms, gradients, etc., to create a thresholded binary image.
-* Apply a perspective transform to rectify binary image ("birds-eye view").
-* Detect lane pixels and fit to find the lane boundary.
-* Determine the curvature of the lane and vehicle position with respect to center.
-* Warp the detected lane boundaries back onto the original image.
-* Output visual display of the lane boundaries and numerical estimation of lane curvature and vehicle position.
-
-The images for camera calibration are stored in the folder called `camera_cal`.  The images in `test_images` are for testing your pipeline on single frames.  If you want to extract more test images from the videos, you can simply use an image writing method like `cv2.imwrite()`, i.e., you can read the video in frame by frame as usual, and for frames you want to save for later you can write to an image file.  
-
-To help the reviewer examine your work, please save examples of the output from each stage of your pipeline in the folder called `output_images`, and include a description in your writeup for the project of what each image shows.    The video called `project_video.mp4` is the video your pipeline should work well on.  
-
-The `challenge_video.mp4` video is an extra (and optional) challenge for you if you want to test your pipeline under somewhat trickier conditions.  The `harder_challenge.mp4` video is another optional challenge and is brutal!
-
-If you're feeling ambitious (again, totally optional though), don't stop there!  We encourage you to go out and take video of your own, calibrate your camera and show us how you would implement this project from scratch!
-
-## How to write a README
-A well written README file can enhance your project and portfolio.  Develop your abilities to create professional README files by completing [this free course](https://www.udacity.com/course/writing-readmes--ud777).
+### Discussion
+The code is only to used to process the [project_video](https://github.com/Michael0725/Udacity_Advanced_LaneLine_Finding/blob/master/project_video.mp4)
+But for the other videos, the code maybe not enough to identify the whole lane-line well, then we still need to consider more.
 
