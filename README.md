@@ -108,8 +108,33 @@ The comparison picture is as follow:
 
 #### SobelX Threshold to generate the binary pictures to identify the lane-line.
 
-The defined method and the generated comparison picture is as follow:
+The SobelX code part method is as follow:
+```
+ def abs_sobel_threshold(self,img,orient='x',thresholdmin=0, thresholdmax=255):
+        gray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
+        if orient == 'x':
+            sobel = cv2.Sobel(gray, cv2.CV_64F, 1, 0, ksize=3)
+        else:
+            sobel = cv2.Sobel(gray, cv2.CV_64F, 0, 1, ksize=3)
+        abs_sobel = np.absolute((sobel))
+
+        scale_sobel = np.uint8(255*abs_sobel/np.max(abs_sobel))
+        sxbinary = np.zeros_like(scale_sobel)
+        sxbinary[(scale_sobel>= thresholdmin)& (scale_sobel<=thresholdmax)] = 1
+        return sxbinary
+ ```
+
+the generated comparison picture is as follow:
 left is the Undistorted pic and the rightone is the sobelX binary pic.
+![straight_lines1](https://raw.githubusercontent.com/Michael0725/Udacity_Advanced_LaneLine_Finding/master/Sobel_X_Threshold/straight_lines1.jpg)
+![straight_lines2](https://raw.githubusercontent.com/Michael0725/Udacity_Advanced_LaneLine_Finding/master/Sobel_X_Threshold/straight_lines2.jpg)
+![test1](https://raw.githubusercontent.com/Michael0725/Udacity_Advanced_LaneLine_Finding/master/Sobel_X_Threshold/test1.jpg)
+![test2](https://raw.githubusercontent.com/Michael0725/Udacity_Advanced_LaneLine_Finding/master/Sobel_X_Threshold/test2.jpg)
+![test3](https://raw.githubusercontent.com/Michael0725/Udacity_Advanced_LaneLine_Finding/master/Sobel_X_Threshold/test3.jpg)
+![test4](https://raw.githubusercontent.com/Michael0725/Udacity_Advanced_LaneLine_Finding/master/Sobel_X_Threshold/test4.jpg)
+![test5](https://raw.githubusercontent.com/Michael0725/Udacity_Advanced_LaneLine_Finding/master/Sobel_X_Threshold/test5.jpg)
+![test6](https://raw.githubusercontent.com/Michael0725/Udacity_Advanced_LaneLine_Finding/master/Sobel_X_Threshold/test6.jpg)
+
 
 All that said, please be concise!  We're not looking for you to write a book here, just a brief description of how you passed each rubric point, and references to the relevant code :). 
 
