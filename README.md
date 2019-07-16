@@ -212,7 +212,23 @@ The code for the perspective transform is as follow:
         # return warped
 ```
 #### Original pics and perspective pics
+![straight_lines1](https://raw.githubusercontent.com/Michael0725/Udacity_Advanced_LaneLine_Finding/master/Perspective_Out_Original/straight_lines1.jpg)
+![straight_lines2](https://raw.githubusercontent.com/Michael0725/Udacity_Advanced_LaneLine_Finding/master/Perspective_Out_Original/straight_lines2.jpg)
+![test1](https://raw.githubusercontent.com/Michael0725/Udacity_Advanced_LaneLine_Finding/master/Perspective_Out_Original/test1.jpg)
+![test2](https://raw.githubusercontent.com/Michael0725/Udacity_Advanced_LaneLine_Finding/master/Perspective_Out_Original/test2.jpg)
+![test3](https://raw.githubusercontent.com/Michael0725/Udacity_Advanced_LaneLine_Finding/master/Perspective_Out_Original/test3.jpg)
+![test4](https://raw.githubusercontent.com/Michael0725/Udacity_Advanced_LaneLine_Finding/master/Perspective_Out_Original/test4.jpg)
+![test5](https://raw.githubusercontent.com/Michael0725/Udacity_Advanced_LaneLine_Finding/master/Perspective_Out_Original/test5.jpg)
+![test6](https://raw.githubusercontent.com/Michael0725/Udacity_Advanced_LaneLine_Finding/master/Perspective_Out_Original/test6.jpg) 
 #### Combined threshold pics and perspective pics
+![straight_lines1](https://raw.githubusercontent.com/Michael0725/Udacity_Advanced_LaneLine_Finding/master/Perspective_Output/straight_lines1.jpg)
+![straight_lines2](https://raw.githubusercontent.com/Michael0725/Udacity_Advanced_LaneLine_Finding/master/Perspective_Output/straight_lines2.jpg)
+![test1](https://raw.githubusercontent.com/Michael0725/Udacity_Advanced_LaneLine_Finding/master/Perspective_Output/test1.jpg)
+![test2](https://raw.githubusercontent.com/Michael0725/Udacity_Advanced_LaneLine_Finding/master/Perspective_Output/test2.jpg)
+![test3](https://raw.githubusercontent.com/Michael0725/Udacity_Advanced_LaneLine_Finding/master/Perspective_Output/test3.jpg)
+![test4](https://raw.githubusercontent.com/Michael0725/Udacity_Advanced_LaneLine_Finding/master/Perspective_Output/test4.jpg)
+![test5](https://raw.githubusercontent.com/Michael0725/Udacity_Advanced_LaneLine_Finding/master/Perspective_Output/test5.jpg)
+![test6](https://raw.githubusercontent.com/Michael0725/Udacity_Advanced_LaneLine_Finding/master/Perspective_Output/test6.jpg) 
 The goals / steps of this project are the following:
 
 * Compute the camera calibration matrix and distortion coefficients given a set of chessboard images.
