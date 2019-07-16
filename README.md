@@ -301,6 +301,10 @@ cv2.fillPoly(out_img, np.int_([pts]), (0, 255, 0))
 plt.imshow(out_img)
 plt.show()
 ```
+The related pics is as follow:
+![image1](https://raw.githubusercontent.com/Michael0725/Udacity_Advanced_LaneLine_Finding/master/processing_image/Figure_1.png)
+![image2](https://raw.githubusercontent.com/Michael0725/Udacity_Advanced_LaneLine_Finding/master/processing_image/window_figure.png)
+![image3](https://raw.githubusercontent.com/Michael0725/Udacity_Advanced_LaneLine_Finding/master/processing_image/fill_the_lane.png)
 ### Calculate the radius of the lane and the vehicle position:
 ```
 ym_per_pix = 30. / 720  # meters per pixel in y dimension
@@ -337,6 +341,12 @@ cv2.putText(combine_pic, center_text, (100, 150), font, 1, (255, 255, 255), 2)
 # plt.show()
 cv2.imwrite(self.Output_path, combine_pic)
 ```
+The related pics is as follow:
+![image1](https://raw.githubusercontent.com/Michael0725/Udacity_Advanced_LaneLine_Finding/master/processing_image/back_perspective.png)
+![image2](https://raw.githubusercontent.com/Michael0725/Udacity_Advanced_LaneLine_Finding/master/processing_image/write_the_info.png)
+
+### The final output image is as follow:
+
 * Compute the camera calibration matrix and distortion coefficients given a set of chessboard images.
 * Apply a distortion correction to raw images.
 * Use color transforms, gradients, etc., to create a thresholded binary image.
