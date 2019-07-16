@@ -104,7 +104,12 @@ The comparison picture is as follow:
 ![test5](https://raw.githubusercontent.com/Michael0725/Udacity_Advanced_LaneLine_Finding/master/Camera_Calibration_Output/test5.jpg)
 ![test6](https://raw.githubusercontent.com/Michael0725/Udacity_Advanced_LaneLine_Finding/master/Camera_Calibration_Output/test6.jpg)
 
-### Threshold Method to identify the Lane-line 
+### Threshold Method to identify the Lane-line
+
+#### SobelX Threshold to generate the binary pictures to identify the lane-line.
+
+The defined method and the generated comparison picture is as follow:
+left is the Undistorted pic and the rightone is the sobelX binary pic.
 
 All that said, please be concise!  We're not looking for you to write a book here, just a brief description of how you passed each rubric point, and references to the relevant code :). 
 
