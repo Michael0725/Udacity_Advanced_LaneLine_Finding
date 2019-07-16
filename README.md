@@ -350,7 +350,7 @@ The related pics is as follow:
 ![image2](https://raw.githubusercontent.com/Michael0725/Udacity_Advanced_LaneLine_Finding/master/processing_image/write_the_info.png)
 
 ### Final output:
-Plese refer the [total code] (https://github.com/Michael0725/Udacity_Advanced_LaneLine_Finding/blob/master/Advanced_Finding_Lane_Line.py)
+Plese refer the [total code](https://github.com/Michael0725/Udacity_Advanced_LaneLine_Finding/blob/master/Advanced_Finding_Lane_Line.py)
 Please refer the [output images](https://github.com/Michael0725/Udacity_Advanced_LaneLine_Finding/tree/master/output_images)
 Please refer the [output videos](https://github.com/Michael0725/Udacity_Advanced_LaneLine_Finding/tree/master/Output_Video)
 
